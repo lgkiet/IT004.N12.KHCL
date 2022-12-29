@@ -1,0 +1,27 @@
+* Chuyển đổi mô hình ER sang mô hình quan hệ
+(1) Mối kết hợp đệ quy (bậc 1)
+ tương tự cái dưới (2): 1-1, 1-n, n-n (bản số tối đa)
+
+
+(2) Mối kết hợp nhị phân (bậc 2 - 2 thực thể riêng biệt)
+	- Nhiều - nhiều: (tạo bảng mới)
+			-> tạo một quan hệ mới 
+			-> tên quan hệ == tên mối liên kết 
+			-> thuộc tính : khoá chính(2 khoá chính của 2 tt gom thành 1), các khoá của mối liên kết
+	- Một - nhiều: (1-n) -> khoá chính (n) chuyển thành thuộc tính của (1)
+			-> thêm vào quan hệ (1) thuộc tính khoá của quan hệ (n)
+	- Một - một: thêm vào quan hệ (1) (bất kì) khoá chính của quan hệ (1) còn lại + các khoá của mối liên kết
+		+ Nếu bản số min khác nhau thì về thêm vào quan hệ (1,1) hết.
+
+(3) Mối kết hợp n-phân (bậc n - n thực thể riêng biệt)
+	- Tạo quan hệ mới có tên == tên liên kết
+	- khoá chính(n khoá chính của n tt gom thành 1), các khoá của mối liên kết
+
+(4) Thực thể yếu (sẽ không thể tồn tại nếu không có một thực thế khác tồn tại) 
+	-> đề thi và lớp, không có lớp thì không thể có đề thi -> đề thi là thực thể yếu
+	- Tạo quan hệ mới tên == tên thực thể yếu
+	- Thuộc tính: Khoá chính(Khoá chính của khoá liên quan, khoá chính của tt yếu), các thuộc tính còn lại của tt yếu
+(5) Thuộc tính đa trị
+	- Tạo bảng mới tên != tên thuộc tính đa trị (nhưng phải liên quan 1 xíu)
+	- Thuộc tính: Khoá chính(khoá chính của qhe chứa đa trị, tên thuộc tính đa trị) 
+
